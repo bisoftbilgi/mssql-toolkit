@@ -716,7 +716,3 @@ chmod 600 config.toml
 * Source metadata is used to distinguish logs from different MSSQL servers.
 * The current offset strategy is based on the latest processed `event_time`.
 * If late-arriving audit files contain older timestamps, a per-file offset strategy may be added in future versions.
-
-## License
-
-This project is provided for audit collection and educational purposes. Review and adapt the configuration before production use.
