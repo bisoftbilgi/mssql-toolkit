@@ -1,4 +1,4 @@
-# MSSQL Audit LOgger
+# MSSQL Audit Logger
 
 ## Overview
 
@@ -68,6 +68,23 @@ Therefore, the audit file paths defined in `config.toml` must be readable by the
 * SQLx
 * Tokio
 * TOML configuration
+
+## Requirements
+
+Before running this project, the following services and tools must be available:
+
+* Docker
+* Docker Compose
+* Microsoft SQL Server
+* PostgreSQL
+* A central MSSQL instance that can read `.sqlaudit` files with `sys.fn_get_audit_file()`
+* A PostgreSQL database where parsed audit records will be stored
+
+The Microsoft SQL Server instance must already be installed, running, and accessible from the collector.
+
+The MSSQL instance configured in `config.toml` must also have permission to read the audit file paths defined under `[[sources]]`.
+
+PostgreSQL must also be installed and accessible because the collector writes parsed records into PostgreSQL tables.
 
 ## Configuration
 
